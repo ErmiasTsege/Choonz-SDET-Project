@@ -22,7 +22,7 @@ test triggers the test phase of Maven and runs the tests using a supplied test r
 ## How to run
 ### From the project root, run:
  1)jmeter -n -t Choonzo_jmeter.jmx -l report.csv
-###  To get the reports in Excel
+###  To get the reports in Excel run:
  2)jmeter -n -t Choonzo_jmeter.jmx -l report.csv -e -o HTMLReport
 To get comprensive reports in excel,json and HTML under HMTLReport 
 
