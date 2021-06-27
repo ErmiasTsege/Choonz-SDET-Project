@@ -1,7 +1,6 @@
 # Choonz Website Testing Project
 ## Functional Testing
 
-
 ### Selenium 
 A Selenium version 3.141.59 implimented
 
@@ -20,11 +19,10 @@ test triggers the test phase of Maven and runs the tests using a supplied test r
 ## Apache JMeter (5.4.1)
 ### Load,Soak,Stress and Spike testing implemented using JMeter
 
-
 ## How to run
 From the project root, run:
-1)jmeter -n -t Choonzo_jmeter.jmx -l report.csv
+### 1)jmeter -n -t Choonzo_jmeter.jmx -l report.csv
   To get the reports in Excel
-2)jmeter -n -t Choonzo_jmeter.jmx -l report.csv -e -o HTMLReport
+###  2)jmeter -n -t Choonzo_jmeter.jmx -l report.csv -e -o HTMLReport
 To get comprensive reports in excel,json and HTML under HMTLReport 
 
