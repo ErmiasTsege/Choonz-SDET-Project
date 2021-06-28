@@ -1,0 +1,208 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 1073741824 bytes for Failed to commit area from 0x00000000c0000000 to 0x0000000100000000 of length 1073741824.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./open/src/hotspot/os/windows/os_windows.cpp:3315), pid=44740, tid=21600
+#
+# JRE version:  (14.0.2+12) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (14.0.2+12-46, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --add-opens=java.desktop/sun.awt=ALL-UNNAMED --add-opens=java.desktop/sun.swing=ALL-UNNAMED --add-opens=java.desktop/javax.swing.text.html=ALL-UNNAMED --add-opens=java.desktop/java.awt=ALL-UNNAMED --add-opens=java.desktop/java.awt.font=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.text=ALL-UNNAMED -XX:+HeapDumpOnOutOfMemoryError -Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:G1ReservePercent=20 -Djava.security.egd=file:/dev/urandom -Duser.language=en -Duser.region=EN C:\apache-jmeter-5.4.1\bin\ApacheJMeter.jar -n -t Choonzo_jmeter.jmx -l soak_report2.csv -e -o HTMLReport
+
+Host: Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz, 4 cores, 5G,  Windows 10 , 64 bit Build 19041 (10.0.19041.1023)
+Time: Fri Jun 25 23:58:05 2021 Eastern Daylight Time elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000144c93db000):  JavaThread "Unknown thread" [_thread_in_vm, id=21600, stack(0x000000315a700000,0x000000315a800000)]
+
+Stack: [0x000000315a700000,0x000000315a800000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x5f8a9a]
+V  [jvm.dll+0x74247a]
+V  [jvm.dll+0x743c2f]
+V  [jvm.dll+0x744273]
+V  [jvm.dll+0x20d288]
+V  [jvm.dll+0x5f5dea]
+V  [jvm.dll+0x5eac45]
+V  [jvm.dll+0x2c7e9c]
+V  [jvm.dll+0x2c7cd2]
+V  [jvm.dll+0x2cdbbc]
+V  [jvm.dll+0x313fe8]
+V  [jvm.dll+0x313710]
+V  [jvm.dll+0x2a092a]
+V  [jvm.dll+0x2a1a79]
+V  [jvm.dll+0x71fd48]
+V  [jvm.dll+0x321c14]
+V  [jvm.dll+0x70112c]
+V  [jvm.dll+0x392def]
+V  [jvm.dll+0x394e61]
+C  [jli.dll+0x524b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ff8ab323038, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000144c9408000 GCTaskThread "GC Thread#0" [stack: 0x000000315a800000,0x000000315a900000] [id=74276]
+  0x00000144c9411800 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000315a900000,0x000000315aa00000] [id=64204]
+  0x00000144c9414000 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000315aa00000,0x000000315ab00000] [id=74396]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff8aab51257]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000144c93d51e0] Heap_lock - owner thread: 0x00000144c93db000
+
+Heap address: 0x00000000c0000000, size: 1024 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (2 events):
+Event: 0.022 Loaded shared library C:\Program Files\Java\jdk-14.0.2\bin\java.dll
+Event: 0.028 Loaded shared library C:\Program Files\Java\jdk-14.0.2\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff68ab40000 - 0x00007ff68ab4f000 	C:\Program Files\Java\jdk-14.0.2\bin\java.exe
+0x00007ff91c1f0000 - 0x00007ff91c3e5000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff8f35b0000 - 0x00007ff8f35c3000 	C:\Program Files\AVAST Software\Avast\aswhook.dll
+0x00007ff91bb90000 - 0x00007ff91bc4d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff919f40000 - 0x00007ff91a208000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff919a60000 - 0x00007ff919b60000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff910500000 - 0x00007ff910515000 	C:\Program Files\Java\jdk-14.0.2\bin\VCRUNTIME140.dll
+0x00007ff909460000 - 0x00007ff909478000 	C:\Program Files\Java\jdk-14.0.2\bin\jli.dll
+0x00007ff91a270000 - 0x00007ff91a31c000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff91c040000 - 0x00007ff91c0de000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff91ba90000 - 0x00007ff91bb2b000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff91bd10000 - 0x00007ff91be3b000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff91a9a0000 - 0x00007ff91ab40000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff919930000 - 0x00007ff919952000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff90a360000 - 0x00007ff90a5fa000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1052_none_60b8f8fd71f5e8cb\COMCTL32.dll
+0x00007ff91af10000 - 0x00007ff91af3a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff919b90000 - 0x00007ff919c9b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff919960000 - 0x00007ff9199fd000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff90f910000 - 0x00007ff90f91a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff91bce0000 - 0x00007ff91bd10000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff8f2b30000 - 0x00007ff8f2bcb000 	C:\Program Files\Java\jdk-14.0.2\bin\msvcp140.dll
+0x00007ff8aa8a0000 - 0x00007ff8ab3be000 	C:\Program Files\Java\jdk-14.0.2\bin\server\jvm.dll
+0x00007ff91a260000 - 0x00007ff91a268000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ff908790000 - 0x00007ff908799000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ff908a20000 - 0x00007ff908a47000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff91bc70000 - 0x00007ff91bcdb000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff917820000 - 0x00007ff917832000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff915630000 - 0x00007ff91563a000 	C:\Program Files\Java\jdk-14.0.2\bin\jimage.dll
+0x00007ff90e040000 - 0x00007ff90e224000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff90dfc0000 - 0x00007ff90dfec000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff919eb0000 - 0x00007ff919f33000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff8f2b00000 - 0x00007ff8f2b25000 	C:\Program Files\Java\jdk-14.0.2\bin\java.dll
+0x00007ff8f2ae0000 - 0x00007ff8f2af6000 	C:\Program Files\Java\jdk-14.0.2\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-14.0.2\bin;C:\WINDOWS\SYSTEM32;C:\Program Files\AVAST Software\Avast;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1052_none_60b8f8fd71f5e8cb;C:\Program Files\Java\jdk-14.0.2\bin\server
+
+VM Arguments:
+jvm_args: --add-opens=java.desktop/sun.awt=ALL-UNNAMED --add-opens=java.desktop/sun.swing=ALL-UNNAMED --add-opens=java.desktop/javax.swing.text.html=ALL-UNNAMED --add-opens=java.desktop/java.awt=ALL-UNNAMED --add-opens=java.desktop/java.awt.font=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.text=ALL-UNNAMED -XX:+HeapDumpOnOutOfMemoryError -Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -XX:G1ReservePercent=20 -Djava.security.egd=file:/dev/urandom -Duser.language=en -Duser.region=EN 
+java_command: C:\apache-jmeter-5.4.1\bin\ApacheJMeter.jar -n -t Choonzo_jmeter.jmx -l soak_report2.csv -e -o HTMLReport
+java_class_path (initial): C:\apache-jmeter-5.4.1\bin\ApacheJMeter.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+   size_t CompressedClassSpaceSize                 = 260046848                                 {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx G1ReservePercent                         = 20                                        {product} {command line}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+     bool HeapDumpOnOutOfMemoryError               = true                                   {manageable} {command line}
+   size_t InitialHeapSize                          = 1073741824                                {product} {command line}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+    uintx MaxGCPauseMillis                         = 100                                       {product} {command line}
+   size_t MaxHeapSize                              = 1073741824                                {product} {command line}
+   size_t MaxMetaspaceSize                         = 268435456                                 {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 1073741824                                {product} {command line}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 1073741824                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {command line}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-14.0.2
+PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files (x86)\dotnet\;C:\Program Files\MySQL Server 8.0\bin;C:\Program Files\Java\jdk-14.0.2\bin;C:\Program Files\Java\jdk-14.0.2\bin;C:\Program Files\apache-maven-3.8.1\bin;%M2_HOME%\bin;C:\apache-jmeter-5.4.1\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\localadmin\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\localadmin\AppData\Local\Programs\Python\Python37\;C:\Users\localadmin\AppData\Local\Microsoft\WindowsApps;C:\Users\localadmin\AppData\Local\atom\bin;C:\Users\localadmin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\localadmin\AppData\Local\Microsoft\WindowsApps;C:\Users\localadmin\.dotnet\tools;C:\Users\localadmin\AppData\Roaming\npm;C:\Users\localadmin\AppData\Local\GitHubDesktop\bin;C:\Users\localadmin\.dotnet\tools;
+USERNAME=localadmin
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.1023)
+OS uptime: 8 days 7:50 hours
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, system-wide physical 5925M (330M free)
+TotalPageFile size 24357M (AvailPageFile size 999M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 51M, peak: 1075M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (14.0.2+12-46) for windows-amd64 JRE (14.0.2+12-46), built on Jul  9 2020 00:35:52 by "mach5one" with MS VC++ 15.9 (VS2017)
+
+END.
